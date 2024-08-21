@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Construct the URL with parameters
       const apiUrl = `https://us-central1-arnacon-nl.cloudfunctions.net/buy_email_verified?session_id=${encodeURIComponent(sessionId)}&user_address=${encodeURIComponent(userAddress)}`;
+      // const url = 'https://us-central1-arnacon-nl.cloudfunctions.net/buy_email_verified' + '?session_id=' +sessionId + '&user_address=' + userAddress;
       const dataToSend = { session_id: sessionId, user_address: userAddress };
       // Fetch request to the cloud server
       fetch(apiUrl, {
@@ -22,8 +23,9 @@ document.addEventListener('DOMContentLoaded', function() {
           },
           body: JSON.stringify(dataToSend)
       })
-      .then(response => response.json())
+      .then(response => response.text())
       .then(data => {
+
           console.log('Success:', data);
           document.getElementById('message').textContent = 'Request processed successfully!';
           const jsonData = JSON.parse(data);
