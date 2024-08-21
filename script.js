@@ -13,10 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
       // Construct the URL with parameters
       const apiUrl = `https://us-central1-arnacon-nl.cloudfunctions.net/buy_email_verified?session_id=${encodeURIComponent(sessionId)}&user_address=${encodeURIComponent(userAddress)}`;
-
+      const dataToSend = { session_id: sessionId, user_address: userAddress };
       // Fetch request to the cloud server
       fetch(apiUrl, {
-          method: 'GET'
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(dataToSend)
       })
       .then(response => response.json())
       .then(data => {
