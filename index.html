@@ -6,10 +6,12 @@
     <title>Redirect Back</title>
 </head>
 <body>
-    <h1>Redirect Back</h1>
+    <h1 id="headerRedirect">Redirect Back</h1>
+    <div id="message">Processing your request, please wait...</div>
+
     <input type="text" id="eenGsmInput" placeholder="Enter GSM">
     <!-- <input type="text" id="deSpInput" placeholder="Enter SP"> -->
-    <button onclick="returnBack()">Send Data</button>
+    <button onclick="returnBack()" id="buttonGSM">Send Data</button>
     <script src="script.js"></script>
 </body>
 </html>
