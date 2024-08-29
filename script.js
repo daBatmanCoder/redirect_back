@@ -58,7 +58,7 @@ function send_to_cloud(data){
     // const apiUrl = `https://us-central1-arnacon-nl.cloudfunctions.net/buy_email_verified?session_id=${encodeURIComponent(sessionId)}&user_address=${encodeURIComponent(userAddress)}`;
     const url = 'https://us-central1-arnacon-nl.cloudfunctions.net/buy_email_verified';
     const dataToSend = { session_id: session_id, signed: session_signed };
-
+    console.log("dataTOSENDTO Server: " + dataToSend);
     fetch(url, {
         method: 'POST',
         headers: {
