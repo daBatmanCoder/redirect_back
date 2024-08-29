@@ -102,6 +102,7 @@ class Controller {
   constructor() {}
 
   receiveData(_data) {
+    console.log(_data);
     dataSigned = JSON.parse(_data); // Update the global variable
     send_to_cloud(dataSigned);
   }
