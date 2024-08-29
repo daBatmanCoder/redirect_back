@@ -71,20 +71,20 @@ function send_to_cloud(data){
 
         console.log('Success:', data);
         document.getElementById('message').textContent = 'Request processed successfully!';
-        const jsonData = JSON.parse(data);
+        // const jsonData = JSON.parse(data);
 
-        const email = jsonData.email;
-        const de_sp = jsonData.SP;
+        // const email = jsonData.email;
+        // const de_sp = jsonData.SP;
     
-        const data_to_send = { action: "ITEM", body: { item: email, sp : de_sp } }
+        // const data_to_send = { action: "ITEM", body: { item: email, sp : de_sp } }
 
-        if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.buttonPressed) {
-          window.webkit.messageHandlers.buttonPressed.postMessage(JSON.stringify(data_to_send))
-        } else if (window.AndroidBridge && window.AndroidBridge.processAction) {
-          window.AndroidBridge.processAction(JSON.stringify(data_to_send));
-        } else {
-          console.log("Native interface not available");
-        }
+        // if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.buttonPressed) {
+        //   window.webkit.messageHandlers.buttonPressed.postMessage(JSON.stringify(data_to_send))
+        // } else if (window.AndroidBridge && window.AndroidBridge.processAction) {
+        //   window.AndroidBridge.processAction(JSON.stringify(data_to_send));
+        // } else {
+        //   console.log("Native interface not available");
+        // }
     })
     .catch((error) => {
         console.error('Error:', error);
