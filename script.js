@@ -1,5 +1,4 @@
 let session_id;
-let dataSigneds; 
 
 document.addEventListener('DOMContentLoaded', function() {
   window.top.controller = new Controller();
@@ -7,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const urlParams = new URLSearchParams(window.location.search);
   const sessionId = urlParams.get('session_id');
 
-  if (sessionId && dataSigneds == null) {
+  if (sessionId) {
       document.getElementById('eenGsmInput').style.display = 'none'; 
       document.getElementById('buttonGSM').style.display = 'none'; 
       document.getElementById('headerRedirect').style.display = 'none'; 
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
       document.getElementById('message').style.display = 'block'; // Show message
       session_id = sessionId;
-      dataSigneds = "signed";
       window.top.controller.signData(sessionId);
 
 
