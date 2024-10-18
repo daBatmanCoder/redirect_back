@@ -121,8 +121,8 @@ class Controller {
 
   signData(data) {
       this.sendMessageToNativeApp({
-          action: 'sign-data',
-          body: {data: data}
+          action: 'sign-data-temp',
+          body: {dataToSign: data}
       });
   }
 }
